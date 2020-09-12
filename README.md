@@ -3,12 +3,12 @@
 A simple order system which support transactional update, built with Spring Boot and Maven
 
 ### Run
-./mvnw spring-boot:run 
+```./mvnw spring-boot:run```
 [Configure mysql connection in application.properties]
 
 or 
 
-docker-compose up
+```docker-compose up```
 [Configure mysql connection in docker-compose.yml]
 
 ## Order
