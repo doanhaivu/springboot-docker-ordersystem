@@ -3,6 +3,8 @@
 ## Order
 GET   http://localhost:8080/orders
 
+GET   http://localhost:8080/orders/9
+
 POST  http://localhost:8080/orders
     ```
     {
@@ -26,7 +28,9 @@ DELETE  http://localhost:8080/orders/11
 ## Inventory
 
 GET   http://localhost:8080/inventory
+
 GET   http://localhost:8080/inventory/1
+
 POST  http://localhost:8080/inventory
     ```
     {
