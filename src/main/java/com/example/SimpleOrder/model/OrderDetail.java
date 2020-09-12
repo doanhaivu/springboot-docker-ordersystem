@@ -27,34 +27,6 @@ public class OrderDetail extends AuditModel {
     @JsonProperty("inventory_id")
     private Inventory inventory;
 
-    /**
-     *  Choice selectedChoice = poll.getChoices().stream()
-     *                 .filter(choice -> choice.getId().equals(voteRequest.getChoiceId()))
-     *                 .findFirst()
-     *                 .orElseThrow(() -> new ResourceNotFoundException("Choice", "id", voteRequest.getChoiceId()));
-     *
-     *         Vote vote = new Vote();
-     *         vote.setPoll(poll);
-     *         vote.setUser(user);
-     *         vote.setChoice(selectedChoice);
-     *
-     *         //choice la inventory
-     *         //for each inventory item, insert new order detail
-     *
-     *
-     * concurrency when updating:
-     *  (1)- if there is new item in the update order: same as create new order for that item, or the case of: same item being ordered
-     *  at the same time, then JPA optimistic lock handle that for us
-     *  (2)- if there is update quantity of existing item:
-     *      + if new quantity less than old quantity:
-     *            - update order detail for that itemId and orderId
-     *            - update inventory quantity for that itemId
-     *      + if new quantity greater than old quantity
-     *            - same as (1)
-     *  Conclusion: the whole create order and update order has to be transactional
-     *  Test: spawn a thread pool and order same item with quantity greater than inventory availability
-     *
-     */
     @NotNull
     private int quantity;
 
